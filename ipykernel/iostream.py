@@ -155,6 +155,7 @@ class IOPubThread:
 
         def _start_event_gc():
             self._event_pipe_gc_task = asyncio.ensure_future(self._run_event_pipe_gc())
+            return self._event_pipe_gc_task
 
         self.io_loop.run_sync(_start_event_gc)
 
